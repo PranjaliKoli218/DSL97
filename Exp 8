@@ -34,4 +34,38 @@ void pop() {
 // 🔹 Peek Operation
 void peek() {
     if (top == NULL) {
-        cout << "Stack
+        cout << "Stack is empty\n";
+    } else {
+        cout << "Top element: " << top->data << endl;
+    }
+}
+
+// 🔹 Display Stack
+void display() {
+    if (top == NULL) {
+        cout << "Stack is empty\n";
+        return;
+    }
+    Node* temp = top;
+    cout << "Stack elements:\n";
+    while (temp != NULL) {
+        cout << temp->data << endl;
+        temp = temp->next;
+    }
+}
+
+// 🔹 Main Function
+int main() {
+    push(10);
+    push(20);
+    push(30);
+
+    display();
+
+    peek();
+
+    pop();
+    display();
+
+    return 0;
+}
